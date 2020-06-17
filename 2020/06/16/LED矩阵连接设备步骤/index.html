@@ -10,18 +10,20 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="1.开发环境准备（1）开启电脑蓝牙   （2）检查win10版本 win+r，输入“winver”。   （3）查看谷歌浏览器版本，必须在70.0.3523.0或者以上。   2.扫描周边环境如图，蓝牙连接的基本框架。   点击“start  scan”，开始连接蓝牙   3.连接设备如图，这段函数提示用户连接成功或者失败，正在链接，调用的一些方法。成功电路板显示字母’C’不成功电路板显示’D’如">
+  <meta name="description" content="1.开发环境准备（1）开启电脑蓝牙   （2）检查win10版本 win+r，输入“winver”。   （3）查看谷歌浏览器版本，必须在70.0.3523.0或者以上。   2.扫描周边环境如图，蓝牙连接的基本框架。   点击“start  scan”，开始连接蓝牙   3.连接设备如图，这段函数提示用户连接成功或者失败，正在链接，调用的一些方法。成功电路板显示字母’C’不成功电路板显示’D’">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LED矩阵连接设备步骤">
 <meta property="og:url" content="http://yoursite.com/2020/06/16/LED%E7%9F%A9%E9%98%B5%E8%BF%9E%E6%8E%A5%E8%AE%BE%E5%A4%87%E6%AD%A5%E9%AA%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.开发环境准备（1）开启电脑蓝牙   （2）检查win10版本 win+r，输入“winver”。   （3）查看谷歌浏览器版本，必须在70.0.3523.0或者以上。   2.扫描周边环境如图，蓝牙连接的基本框架。   点击“start  scan”，开始连接蓝牙   3.连接设备如图，这段函数提示用户连接成功或者失败，正在链接，调用的一些方法。成功电路板显示字母’C’不成功电路板显示’D’如">
+<meta property="og:description" content="1.开发环境准备（1）开启电脑蓝牙   （2）检查win10版本 win+r，输入“winver”。   （3）查看谷歌浏览器版本，必须在70.0.3523.0或者以上。   2.扫描周边环境如图，蓝牙连接的基本框架。   点击“start  scan”，开始连接蓝牙   3.连接设备如图，这段函数提示用户连接成功或者失败，正在链接，调用的一些方法。成功电路板显示字母’C’不成功电路板显示’D’">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/bbf5f359-fcdc-43de-9ab4-b3c7dc921b1c.png">
 <meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/1b38f521-2b95-491c-a604-b7cca84aadb0.png">
 <meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/11aec105-4916-4aee-8b2b-d4a37d4a4251.png">
 <meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/c875c18b-933b-407a-9fb1-a61dad23f08e.png">
 <meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/3d7fed44-4542-434f-af4d-265ba8328c17.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/836caf84-a128-47d8-a6a9-704001df077c.jpg">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/c56c2f04-1cb6-4fcf-98d3-9e944546a3ff.jpg">
 <meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/bfdbce39-5990-4f44-b76f-48c5d6dc7ee6.png">
 <meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/ecdd79a7-54ac-4c49-a3a5-a022871d2aa3.png">
 <meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/b7036c12-1b41-402b-b3db-8022f8426d68.png">
@@ -32,7 +34,7 @@
 <meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/09d15d2f-449d-4628-b566-a3211b58f06b.png">
 <meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/1074ea8c-7a31-497f-8f89-e88acc3f6ec5.png">
 <meta property="article:published_time" content="2020-06-16T13:47:10.000Z">
-<meta property="article:modified_time" content="2020-06-17T01:33:33.665Z">
+<meta property="article:modified_time" content="2020-06-17T03:43:54.235Z">
 <meta property="article:author" content="正在输出中......">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://imgkr.cn-bj.ufileos.com/bbf5f359-fcdc-43de-9ab4-b3c7dc921b1c.png">
@@ -249,7 +251,9 @@
 <p><img src="https://imgkr.cn-bj.ufileos.com/c875c18b-933b-407a-9fb1-a61dad23f08e.png" alt=""> </p>
 <p>点击“start  scan”，开始连接蓝牙</p>
 <p><img src="https://imgkr.cn-bj.ufileos.com/3d7fed44-4542-434f-af4d-265ba8328c17.png" alt=""> </p>
-<h2 id="3-连接设备"><a href="#3-连接设备" class="headerlink" title="3.连接设备"></a>3.连接设备</h2><p>如图，这段函数提示用户连接成功或者失败，正在链接，调用的一些方法。成功电路板显示字母’C’<br>不成功电路板显示’D’<br><img src="https://imgkr.cn-bj.ufileos.com/bfdbce39-5990-4f44-b76f-48c5d6dc7ee6.png" alt=""><br>如图，selected_device 是显示各种名字id和各种信息<br><img src="https://imgkr.cn-bj.ufileos.com/ecdd79a7-54ac-4c49-a3a5-a022871d2aa3.png" alt=""><br><img src="https://imgkr.cn-bj.ufileos.com/b7036c12-1b41-402b-b3db-8022f8426d68.png" alt=""> </p>
+<h2 id="3-连接设备"><a href="#3-连接设备" class="headerlink" title="3.连接设备"></a>3.连接设备</h2><p>如图，这段函数提示用户连接成功或者失败，正在链接，调用的一些方法。成功电路板显示字母’C’<br>不成功电路板显示’D’<br><img src="https://imgkr.cn-bj.ufileos.com/836caf84-a128-47d8-a6a9-704001df077c.jpg" alt=""></p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/c56c2f04-1cb6-4fcf-98d3-9e944546a3ff.jpg" alt=""></p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/bfdbce39-5990-4f44-b76f-48c5d6dc7ee6.png" alt=""><br>如图，selected_device 是显示各种名字id和各种信息<br><img src="https://imgkr.cn-bj.ufileos.com/ecdd79a7-54ac-4c49-a3a5-a022871d2aa3.png" alt=""><br><img src="https://imgkr.cn-bj.ufileos.com/b7036c12-1b41-402b-b3db-8022f8426d68.png" alt=""> </p>
 <h2 id="4-断开连接"><a href="#4-断开连接" class="headerlink" title="4.断开连接"></a>4.断开连接</h2><p>如图，当开启蓝牙设备之后，再次点击“Disconnect”则断开连接。电路板显示字母‘D’<br><img src="https://imgkr.cn-bj.ufileos.com/5c9450e3-19ef-43f8-90ab-e83cc6337450.png" alt=""><br><img src="https://imgkr.cn-bj.ufileos.com/f3ef937b-e996-4c82-b382-28572be4394d.png" alt=""><br><img src="https://imgkr.cn-bj.ufileos.com/9540c236-b6f7-463b-9a18-64a838871976.png" alt=""><br><img src="https://imgkr.cn-bj.ufileos.com/f438ef27-962d-4e48-92e6-ed17b88b02e1.png" alt="">  </p>
 <p>完整代码及结果如图所示</p>
 <p><img src="https://imgkr.cn-bj.ufileos.com/09d15d2f-449d-4628-b566-a3211b58f06b.png" alt=""><br><img src="https://imgkr.cn-bj.ufileos.com/1074ea8c-7a31-497f-8f89-e88acc3f6ec5.png" alt=""></p>
