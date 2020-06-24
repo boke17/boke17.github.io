@@ -6,21 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>控制任意一行列灯 | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="操作一：添加代码在谷歌浏览器上控制micro：bit的任意行或列灯亮。1.我们要在开头用代码定义三个数组，用于表示要写入的值：  2.定义两组按钮来控制led灯，每个按钮调用一个函数，用来改变led灯的亮灭。  3.添加相关的函数用来控制led灯的行：  4.添加相关的函数用来控制led灯的列：  5.修改“randomLEDs()函数，并删除下方原来的代码：  操作二： 执行，结果1.打开谷歌网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="控制任意一行列灯">
+<meta property="og:url" content="http://yoursite.com/2020/06/23/%E6%8E%A7%E5%88%B6%E4%BB%BB%E6%84%8F%E4%B8%80%E8%A1%8C%E5%88%97%E7%81%AF/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="操作一：添加代码在谷歌浏览器上控制micro：bit的任意行或列灯亮。1.我们要在开头用代码定义三个数组，用于表示要写入的值：  2.定义两组按钮来控制led灯，每个按钮调用一个函数，用来改变led灯的亮灭。  3.添加相关的函数用来控制led灯的行：  4.添加相关的函数用来控制led灯的列：  5.修改“randomLEDs()函数，并删除下方原来的代码：  操作二： 执行，结果1.打开谷歌网">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://static01.imgkr.com/temp/5d9ba549c1824778a4c92b1cd229cbe1.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/efabed124f8d418c957ec4321394678b.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/032da52ca9ae4f4498e6a493c9ec8c54.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/0803333e76d0493fb5bc1eb5dcb17c7d.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/23fe9bd55d87401ca604ec96690f0415.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/0017a6d6c626462e8fcc6748f9e209e0.png">
+<meta property="og:image" content="https://static01.imgkr.com/temp/7abd4c2e49a746bca2daa33a851def05.jpg">
+<meta property="article:published_time" content="2020-06-23T08:39:02.000Z">
+<meta property="article:modified_time" content="2020-06-24T04:16:29.256Z">
 <meta property="article:author" content="正在输出中......">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://static01.imgkr.com/temp/5d9ba549c1824778a4c92b1cd229cbe1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -171,116 +179,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <script src="/lib/oauthcallback.browser.js"></script>
-  
-  <script>
-    Oauthcallback();
-  </script>
-
-
-  
-    <article id="post-控制任意led小灯" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-控制任意一行列灯" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/06/23/%E6%8E%A7%E5%88%B6%E4%BB%BB%E6%84%8Fled%E5%B0%8F%E7%81%AF/">控制任意led小灯</a>
-	
+    <h1 class="article-title" itemprop="name">
+      控制任意一行列灯
     </h1>
   
 
 
   
   
-<a href="/2020/06/23/%E6%8E%A7%E5%88%B6%E4%BB%BB%E6%84%8Fled%E5%B0%8F%E7%81%AF/" class="archive-article-date">
-        <time datetime="2020-06-23T10:46:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-23</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="操作一：在控制任意行列灯的基础上，添加控制任意小灯的相关代码。"><a href="#操作一：在控制任意行列灯的基础上，添加控制任意小灯的相关代码。" class="headerlink" title="操作一：在控制任意行列灯的基础上，添加控制任意小灯的相关代码。"></a>操作一：在控制任意行列灯的基础上，添加控制任意小灯的相关代码。</h2><p>1.在开头添加：</p>
-<p><img src="https://static01.imgkr.com/temp/5e5c89caec2444ae91bbb0b0de383e32.png" alt=""></p>
-<p>2.写入led小灯控制函数：</p>
-<p><img src="https://static01.imgkr.com/temp/112ae709309e4e1c8b55df746f190c4c.png" alt=""></p>
-<p>3.在下面代码中添加按钮：</p>
-<p><img src="https://static01.imgkr.com/temp/3ca6dee69bd8447e9de8de82c2ad988a.png" alt=""></p>
-<h2 id="操作二：页面操作"><a href="#操作二：页面操作" class="headerlink" title="操作二：页面操作"></a>操作二：页面操作</h2><p>1.打开谷歌网页连接micro；bit并点击“控制任意小灯”下方的按钮。<br><img src="https://static01.imgkr.com/temp/ac4c1010cab041329fed5fbe3afdb5e7.png" alt=""></p>
-<p>2.micro；bit显示结果：</p>
-<p><img src="https://static01.imgkr.com/temp/14fe3faf921f49eb8c8c3f0518fc1313.jpg" alt=""></p>
-<p>成功显示‘亚’字，表明成功！</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/23/%E6%8E%A7%E5%88%B6%E4%BB%BB%E6%84%8Fled%E5%B0%8F%E7%81%AF/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-
-
-
-  
-    <article id="post-控制任意一行列灯" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/06/23/%E6%8E%A7%E5%88%B6%E4%BB%BB%E6%84%8F%E4%B8%80%E8%A1%8C%E5%88%97%E7%81%AF/">控制任意一行列灯</a>
-	
-    </h1>
-  
-
-
-  
-  
 <a href="/2020/06/23/%E6%8E%A7%E5%88%B6%E4%BB%BB%E6%84%8F%E4%B8%80%E8%A1%8C%E5%88%97%E7%81%AF/" class="archive-article-date">
         <time datetime="2020-06-23T08:39:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-23</time>
 </a>
@@ -288,6 +205,27 @@
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">182字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
@@ -313,7 +251,59 @@
     
 
     
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>感谢大佬恩赐<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/assets/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/assets/%E5%BE%AE%E4%BF%A1.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
 
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          正在输出中......
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://yoursite.com/2020/06/23/控制任意一行列灯/" title="控制任意一行列灯" target="_blank">http://yoursite.com/2020/06/23/控制任意一行列灯/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
@@ -323,16 +313,85 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/23/%E6%8E%A7%E5%88%B6%E4%BB%BB%E6%84%8F%E4%B8%80%E8%A1%8C%E5%88%97%E7%81%AF/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/23/%E6%8E%A7%E5%88%B6%E4%BB%BB%E6%84%8F%E4%B8%80%E8%A1%8C%E5%88%97%E7%81%AF/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2020/06/23/%E6%8E%A7%E5%88%B6%E4%BB%BB%E6%84%8Fled%E5%B0%8F%E7%81%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          控制任意led小灯
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/22/%E5%8A%A0%E9%80%9F%E5%BA%A6%E8%AE%A1%E5%BE%97%E4%B8%89%E8%BD%B4%E5%80%BC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">加速度计得三轴值</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -347,779 +406,57 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-加速度计得三轴值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/06/22/%E5%8A%A0%E9%80%9F%E5%BA%A6%E8%AE%A1%E5%BE%97%E4%B8%89%E8%BD%B4%E5%80%BC/">加速度计得三轴值</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/06/22/%E5%8A%A0%E9%80%9F%E5%BA%A6%E8%AE%A1%E5%BE%97%E4%B8%89%E8%BD%B4%E5%80%BC/" class="archive-article-date">
-        <time datetime="2020-06-22T12:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="操作一：下载“蓝牙加速计服务”"><a href="#操作一：下载“蓝牙加速计服务”" class="headerlink" title="操作一：下载“蓝牙加速计服务”"></a>操作一：下载“蓝牙加速计服务”</h2><p>用谷歌浏览器打开 <a href="https://makecode.microbit.org/v0/89975-20684-84568-20127" target="_blank" rel="noopener">https://makecode.microbit.org/v0/89975-20684-84568-20127</a>  网址，，没有“蓝牙加速计服务”可以添加然后点击左下角的下载到micbit板子里。</p>
-<p><img src="https://static01.imgkr.com/temp/ccce4d563b4f4de5a99eaddc3e26634c.png" alt=""></p>
-<h2 id="操作二：添加相关代码"><a href="#操作二：添加相关代码" class="headerlink" title="操作二：添加相关代码"></a>操作二：添加相关代码</h2><p>1.添加变量<br><img src="https://static01.imgkr.com/temp/4f512c8e6680439a9aa07afebf48357a.png" alt=""><br>2.添加一个函数进行数据传输<br><img src="https://static01.imgkr.com/temp/4e645561011a4148a7da583f668ffd5e.png" alt=""><br>3.在 “resetUI()”中添加“setNotificationsStatus(status)”进行调用</p>
-<p><img src="https://static01.imgkr.com/temp/22cc386e34094c96998251bd7709e723.png" alt=""></p>
-<p>4.添加调用命令先认证再执行：</p>
-<p><img src="https://static01.imgkr.com/temp/9e9ddf11f57c4bd1875d04882594a0ae.png" alt=""></p>
-<p>5.我们需要一些代码来进行处理收到的通知，需要在“toggleAccelerometerNotifications()中添加如下代码：</p>
-<p><img src="https://static01.imgkr.com/temp/8d1d85f47a154999af4f823250b05984.png" alt=""></p>
-<p>6.添加onAccelerometerData函数，将每次收到通知的时候会被调用。事件处理程序接收一个事件对象，将附加到事件对象目标值的ArrayBuffer中。</p>
-<p><img src="https://static01.imgkr.com/temp/47a5b95ec0cb426f853e22f9433fa7a1.png" alt=""></p>
-<p>7.添加表格代码：</p>
-<p><img src="https://static01.imgkr.com/temp/0bb0994ac98242ae92584b9298760833.png" alt=""></p>
-<p><img src="https://static01.imgkr.com/temp/84ee10d9c30141b68326553102d2eb9e.png" alt=""></p>
-<h2 id="操作三：代码保存并打开，显示下图为正常现象："><a href="#操作三：代码保存并打开，显示下图为正常现象：" class="headerlink" title="操作三：代码保存并打开，显示下图为正常现象："></a>操作三：代码保存并打开，显示下图为正常现象：</h2><p><img src="https://static01.imgkr.com/temp/14b2cf7cfe4347b88ed722221e1d18f7.png" alt=""></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/22/%E5%8A%A0%E9%80%9F%E5%BA%A6%E8%AE%A1%E5%BE%97%E4%B8%89%E8%BD%B4%E5%80%BC/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#操作一：添加代码"><span class="toc-number">1.</span> <span class="toc-text">操作一：添加代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在谷歌浏览器上控制micro：bit的任意行或列灯亮。"><span class="toc-number">1.1.</span> <span class="toc-text">在谷歌浏览器上控制micro：bit的任意行或列灯亮。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作二：-执行，结果"><span class="toc-number">2.</span> <span class="toc-text">操作二： 执行，结果</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
 
-  
-    <article id="post-led读写特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/06/21/led%E8%AF%BB%E5%86%99%E7%89%B9%E6%80%A7/">led读写特性</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/06/21/led%E8%AF%BB%E5%86%99%E7%89%B9%E6%80%A7/" class="archive-article-date">
-        <time datetime="2020-06-21T08:02:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="添加读写特性"><a href="#添加读写特性" class="headerlink" title="添加读写特性"></a>添加读写特性</h2><p>1.写特性：<br><img src="https://static01.imgkr.com/temp/f0d2edd6625a4a378f9b7a0c89f21bff.png" alt=""><br>2.读特性：<br><img src="https://static01.imgkr.com/temp/93f93e7525334c1bb3b77bb0e51ef32c.png" alt=""><br>3.添加表格按钮：<br><img src="https://static01.imgkr.com/temp/097fadd8931f4b15a5ac8b99de5cfd29.png" alt=""><br>4.打开谷歌浏览器连接micro:bit，按照顺序点击所标记的按钮，如下图显示：<br><img src="https://static01.imgkr.com/temp/fc09f8a5478d4c2686fe2e673be5bd80.png" alt=""><br>led小灯亮：<br><img src="https://static01.imgkr.com/temp/c5f9b66b0c5545f8817cd77cf128947a.jpg" alt=""><br>读写特性添加完成</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/21/led%E8%AF%BB%E5%86%99%E7%89%B9%E6%80%A7/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-led矩阵的服务特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/06/18/led%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%89%B9%E6%80%A7/">led矩阵的服务特性</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/06/18/led%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%89%B9%E6%80%A7/" class="archive-article-date">
-        <time datetime="2020-06-18T13:15:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-18</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="步骤1："><a href="#步骤1：" class="headerlink" title="步骤1："></a>步骤1：</h2><p>首先，我们打开谷歌浏览器搜索“chrome://bluetooth-internals”点击Devices,显示如下截图：<br><img src="https://static01.imgkr.com/temp/ffc7fda52d794e7b86813aa096a7ff09.png" alt=""><br>再次点击Inspect，显示下图<br><img src="https://static01.imgkr.com/temp/ab427abe41fb4377b342952b9806f70c.png" alt=""><br>箭头所指数字为8,表示现有8个服务，没有蓝牙温度服务.</p>
-<p>在谷歌浏览器中搜索<a href="https://makecode.microbit.org/v0/89975-20684-84568-20127”进行蓝牙在线编辑，把蓝牙温度服务模块移动到正确位置才可以实现下面显示结果" target="_blank" rel="noopener">https://makecode.microbit.org/v0/89975-20684-84568-20127”进行蓝牙在线编辑，把蓝牙温度服务模块移动到正确位置才可以实现下面显示结果</a><br><img src="https://static01.imgkr.com/temp/418f7e81e800433cae12c726c99cc448.png" alt=""><br>编辑好蓝牙过后下载即可.把下载好的放在micro：bit在电脑的位置里.刷新Inspect此页面然后点击Inspect显示就为9个服务如下：<br><img src="https://static01.imgkr.com/temp/ed13730ef6ee457fa765214efb336f2e.png" alt=""></p>
-<h2 id="步骤2："><a href="#步骤2：" class="headerlink" title="步骤2："></a>步骤2：</h2><p>蓝牙温度服务显示成功：<br><img src="https://static01.imgkr.com/temp/719b960a886540a084f93b8810261a53.jpg" alt=""></p>
-<p>蓝牙温度服务操作成功！<br>板子显示：<br><img src="https://static01.imgkr.com/temp/92d10719772d48b3b6efc598932e5f7f.jpg" alt=""></p>
-<h2 id="步骤3-代码："><a href="#步骤3-代码：" class="headerlink" title="步骤3-代码："></a>步骤3-代码：</h2><p><img src="https://static01.imgkr.com/temp/08d66d119522418e925081889beac3ca.png" alt=""></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/18/led%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%89%B9%E6%80%A7/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LED矩阵连接设备步骤" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/06/16/LED%E7%9F%A9%E9%98%B5%E8%BF%9E%E6%8E%A5%E8%AE%BE%E5%A4%87%E6%AD%A5%E9%AA%A4/">LED矩阵连接设备步骤</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/06/16/LED%E7%9F%A9%E9%98%B5%E8%BF%9E%E6%8E%A5%E8%AE%BE%E5%A4%87%E6%AD%A5%E9%AA%A4/" class="archive-article-date">
-        <time datetime="2020-06-16T13:47:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="1-开发环境准备"><a href="#1-开发环境准备" class="headerlink" title="1.开发环境准备"></a>1.开发环境准备</h2><p>（1）开启电脑蓝牙</p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/bbf5f359-fcdc-43de-9ab4-b3c7dc921b1c.png" alt=""> </p>
-<p>（2）检查win10版本 win+r，输入“winver”。</p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/1b38f521-2b95-491c-a604-b7cca84aadb0.png" alt=""> </p>
-<p>（3）查看谷歌浏览器版本，必须在70.0.3523.0或者以上。</p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/11aec105-4916-4aee-8b2b-d4a37d4a4251.png" alt=""> </p>
-<h2 id="2-扫描周边环境"><a href="#2-扫描周边环境" class="headerlink" title="2.扫描周边环境"></a>2.扫描周边环境</h2><p>如图，蓝牙连接的基本框架。</p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/c875c18b-933b-407a-9fb1-a61dad23f08e.png" alt=""> </p>
-<p>点击“start  scan”，开始连接蓝牙</p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/3d7fed44-4542-434f-af4d-265ba8328c17.png" alt=""> </p>
-<h2 id="3-连接设备"><a href="#3-连接设备" class="headerlink" title="3.连接设备"></a>3.连接设备</h2><p>如图，这段函数提示用户连接成功或者失败，正在链接，调用的一些方法。成功电路板显示字母’C’<br>不成功电路板显示’D’<br><img src="https://imgkr.cn-bj.ufileos.com/836caf84-a128-47d8-a6a9-704001df077c.jpg" alt=""></p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/c56c2f04-1cb6-4fcf-98d3-9e944546a3ff.jpg" alt=""></p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/bfdbce39-5990-4f44-b76f-48c5d6dc7ee6.png" alt=""><br>如图，selected_device 是显示各种名字id和各种信息<br><img src="https://imgkr.cn-bj.ufileos.com/ecdd79a7-54ac-4c49-a3a5-a022871d2aa3.png" alt=""><br><img src="https://imgkr.cn-bj.ufileos.com/b7036c12-1b41-402b-b3db-8022f8426d68.png" alt=""> </p>
-<h2 id="4-断开连接"><a href="#4-断开连接" class="headerlink" title="4.断开连接"></a>4.断开连接</h2><p>如图，当开启蓝牙设备之后，再次点击“Disconnect”则断开连接。电路板显示字母‘D’<br><img src="https://imgkr.cn-bj.ufileos.com/5c9450e3-19ef-43f8-90ab-e83cc6337450.png" alt=""><br><img src="https://imgkr.cn-bj.ufileos.com/f3ef937b-e996-4c82-b382-28572be4394d.png" alt=""><br><img src="https://imgkr.cn-bj.ufileos.com/9540c236-b6f7-463b-9a18-64a838871976.png" alt=""><br><img src="https://imgkr.cn-bj.ufileos.com/f438ef27-962d-4e48-92e6-ed17b88b02e1.png" alt="">  </p>
-<p>完整代码及结果如图所示</p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/09d15d2f-449d-4628-b566-a3211b58f06b.png" alt=""><br><img src="https://imgkr.cn-bj.ufileos.com/1074ea8c-7a31-497f-8f89-e88acc3f6ec5.png" alt=""></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/16/LED%E7%9F%A9%E9%98%B5%E8%BF%9E%E6%8E%A5%E8%AE%BE%E5%A4%87%E6%AD%A5%E9%AA%A4/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo上传图片并加入文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/05/29/hexo%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%B9%B6%E5%8A%A0%E5%85%A5%E6%96%87%E7%AB%A0/">hexo上传图片并加入文章</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/05/29/hexo%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%B9%B6%E5%8A%A0%E5%85%A5%E6%96%87%E7%AB%A0/" class="archive-article-date">
-        <time datetime="2020-05-29T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="上传图片"><a href="#上传图片" class="headerlink" title="上传图片"></a>上传图片</h1><h2 id="准备图片"><a href="#准备图片" class="headerlink" title="准备图片"></a>准备图片</h2><p><img src="https://imgkr.cn-bj.ufileos.com/c7916154-55da-4a43-83fc-f5a3273cd967.png" alt=""></p>
-<h2 id="上传图片到图床"><a href="#上传图片到图床" class="headerlink" title="上传图片到图床"></a>上传图片到图床</h2><blockquote>
-<p>使用网络公开的图床API上传图片，获取网络地址</p>
-</blockquote>
-<p><img src="https://imgkr.cn-bj.ufileos.com/4165f9aa-3304-4fe9-ace1-0c683a72913b.png" alt=""></p>
-<h2 id="使用markdown格式插入图片"><a href="#使用markdown格式插入图片" class="headerlink" title="使用markdown格式插入图片"></a>使用markdown格式插入图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https:&#x2F;&#x2F;imgkr.cn-bj.ufileos.com&#x2F;43f4be27-e30a-4de2-bbe4-979db462f334.png)</span><br></pre></td></tr></table></figure>
-
-<p><strong>效果如图：</strong></p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/43f4be27-e30a-4de2-bbe4-979db462f334.png" alt=""></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/29/hexo%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%B9%B6%E5%8A%A0%E5%85%A5%E6%96%87%E7%AB%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-安装hexo以及简单配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/05/29/%E5%AE%89%E8%A3%85hexo%E4%BB%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/">安装hexo以及简单配置</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/05/29/%E5%AE%89%E8%A3%85hexo%E4%BB%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-        <time datetime="2020-05-29T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><p>在安装 Hexo 之前，你需要安装以下两个工具：</p>
-<ul>
-<li>Git</li>
-<li>Node.js</li>
-</ul>
-<p>如果您已经安装好以上两个工具，可以直接跳转至 安装 Hexo。</p>
-<h2 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h2><ul>
-<li>Windows：下载并安装 git.</li>
-<li>Mac：使用 Homebrew, MacPorts ： brew install git ; 或下载 安装程序 安装。</li>
-<li>Linux (Ubuntu, Debian)： sudo apt-get install git-core</li>
-<li>Linux (Fedora, Red Hat, CentOS)： sudo yum install git-core</li>
-<li>Linux (Arch 系列)： sudo pacman -S git</li>
-</ul>
-<blockquote>
-<p>提醒</p>
-<p>由于墙的原因，从上面的链接下载 git for windows 最好挂上一个代理，否则下载速度十分缓慢。也可以参考这个页面，收录了存储于百度云的下载地址。</p>
-</blockquote>
-<blockquote>
-<p>提醒</p>
-<p>如果你是 CentOS 服务器上的，可以直接使用 HexoOneClickInstallation 这个脚本快速安装 Hexo。</p>
-</blockquote>
-<h1 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h1><p>安装 Node.js 的最佳方式是使用 nvm。</p>
-<p>cURL:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https:&#x2F;&#x2F;raw.github.com&#x2F;creationix&#x2F;nvm&#x2F;v0.33.11&#x2F;install.sh | sh</span><br></pre></td></tr></table></figure>
-
-<p>Wget:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -qO- https:&#x2F;&#x2F;raw.github.com&#x2F;creationix&#x2F;nvm&#x2F;v0.33.11&#x2F;install.sh | sh</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后，重启终端并执行下列命令即可安装 Node.js。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install stable</span><br></pre></td></tr></table></figure>
-
-<p>或者您也可以下载 安装程序 来安装。</p>
-<h1 id="安装-Hexo-1"><a href="#安装-Hexo-1" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><p>安装好后，即可使用 npm 完成 Hexo 的安装。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<h1 id="建立网站"><a href="#建立网站" class="headerlink" title="建立网站"></a>建立网站</h1><p>安装好 Hexo 后即可建立你的网站。</p>
-<p>首先建立一个文件夹。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir &lt;your_blog_name&gt;  # 建立你的网站根目录，名字可以自己修改</span><br></pre></td></tr></table></figure>
-
-<p>然后往这个文件夹里安装 Hexo。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;your_blog_name&gt;</span><br></pre></td></tr></table></figure>
-
-<p>这样就建立好网站了！</p>
-<h1 id="配置-Hexo"><a href="#配置-Hexo" class="headerlink" title="配置 Hexo"></a>配置 Hexo</h1><blockquote>
-<p>警告</p>
-<p>此部分内容可能过期，请见 <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">Hexo 官方文档</a>。</p>
-</blockquote>
-<h2 id="博客预览"><a href="#博客预览" class="headerlink" title="博客预览"></a>博客预览</h2><p><img src="https://imgkr.cn-bj.ufileos.com/5143d831-cd36-4f33-8f89-36c2a6528fec.png" alt=""></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/29/%E5%AE%89%E8%A3%85hexo%E4%BB%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
 
-  
-    <article id="post-认识Hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/05/29/%E8%AE%A4%E8%AF%86Hexo/">认识hexo</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/05/29/%E8%AE%A4%E8%AF%86Hexo/" class="archive-article-date">
-        <time datetime="2020-05-29T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="认识-Hexo"><a href="#认识-Hexo" class="headerlink" title="认识 Hexo"></a>认识 Hexo</h1><p>Hexo 是一个快速、简洁且高效的博客框架，可以让你快速建立一个博客。</p>
-<h1 id="快速"><a href="#快速" class="headerlink" title="快速"></a>快速</h1><p>Hexo 使用 Node.js 编写。得益于 Node.js，使得 Hexo 生成上百个页面游刃有余。</p>
-<h1 id="支持-Markdown"><a href="#支持-Markdown" class="headerlink" title="支持 Markdown"></a>支持 Markdown</h1><p>Hexo 支持 GFM (GitHub Flavored Markdown) 的大部分功能。如果你不喜欢 Markdown ，你还可以换一个 Hexo 渲染插件。</p>
-<h1 id="部署方便"><a href="#部署方便" class="headerlink" title="部署方便"></a>部署方便</h1><p>只需要一条指令就可以部署到 GitHub Pages、Heroku、Coding Pages 等其他网站。</p>
-<h1 id="插件丰富"><a href="#插件丰富" class="headerlink" title="插件丰富"></a>插件丰富</h1><p>Hexo 有许多插件，可以进行各种操作。</p>
-<h1 id="学习-Hexo-之前，你需要有："><a href="#学习-Hexo-之前，你需要有：" class="headerlink" title="学习 Hexo 之前，你需要有："></a>学习 Hexo 之前，你需要有：</h1><ul>
-<li><del>Node.js 基本知识</del></li>
-<li><del>Git 基本知识</del></li>
-<li>Markdown 基本知识</li>
-<li><del>Html、css、JavaScript 基本知识</del></li>
-<li>······</li>
-</ul>
-<p>当然了，你可别被吓跑了。除了 Markdown ，其他都不用熟练掌握（事实上如果你不注意排版连 Markdown 都不用掌握，但最好还是学学吧）。如果你完全不会以上划线部分的知识，也没关系。只是简单地建个可以发文章的博客就好了。如果你要更上一层楼，那么以上被划掉的知识就是必备的啦～</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/29/%E8%AE%A4%E8%AF%86Hexo/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
 
 
 
-  
-    <article id="post-部署hexo到github以及自定义域名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/05/29/%E9%83%A8%E7%BD%B2hexo%E5%88%B0github%E4%BB%A5%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/">部署hexo到GitHub以及自定义域名</a>
-	
-    </h1>
-  
-
 
-  
-  
-<a href="/2020/05/29/%E9%83%A8%E7%BD%B2hexo%E5%88%B0github%E4%BB%A5%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/" class="archive-article-date">
-        <time datetime="2020-05-29T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
-</a>
-
-  
-  
-    
 
+  <div id="giteement-ctn"></div>
   
-  </header>
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
   
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="部署-Hexo"><a href="#部署-Hexo" class="headerlink" title="部署 Hexo"></a>部署 Hexo</h1><h2 id="部署到-GitHub"><a href="#部署到-GitHub" class="headerlink" title="部署到 GitHub"></a>部署到 GitHub</h2><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="#准备工作"></a>#准备工作</h2><p>如果没有账号，请点此前往 GitHub 注册一个 GitHub 账号。</p>
-<p>新建一个公开仓库，仓库名格式为 your_username.github.io 例如你的 GitHub 用户名是 easyhexo ，那么你的仓库地址名称就应该是 easyhexo.github.io</p>
-<p>创建完成后记下该仓库的 HTTPS/SSH 地址，一般格式为 <a href="https://github.com/your_username/your_reponame.git" target="_blank" rel="noopener">https://github.com/your_username/your_reponame.git</a> 在下一步会用到。</p>
-<h3 id="安装部署插件"><a href="#安装部署插件" class="headerlink" title="安装部署插件"></a>安装部署插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ npm install hexo-server --save</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h3><p>如果你只是安装好了 Git 但没有配置过你的 Git ，那么现在需要做的第一件事情就是设置你的 Git 用户名和邮箱。 在 Git Bash 中执行以下两条命令配置你的用户名和邮箱，这里建议用户名和邮箱与你的 GitHub 用户名和邮箱保持一致。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;Your_user_name&quot;</span><br><span class="line">$ git config --global user.email Your_email@example.com</span><br></pre></td></tr></table></figure>
+  <script>
+  <!-- id: "控制任意一行列灯" -->
+  var giteement = new Giteement({
+    id: '20200623163902',
+    owner: 'wx_54f40a29f6',
+    repo: 'myblog',
+    backcall_uri: 'https://boke17.github.io/',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: 'f385c74dcbdab454457188165cee1fedf3ecc967db0263e6bad4822b8bd0f0cc',
+      client_secret: 'adda8460b748f459e1cd912e2a430a71418d769d1e157be4697562bcf0dda5f5'
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
 
-<blockquote>
-<p>提醒</p>
-<p>每次 Git 提交时都会附带这两条信息，用于记录是谁提交的更新，并且会随更新内容一起被记录到历史记录中。简单说，是用来标记的你的身份的～</p>
-</blockquote>
-<h3 id="配置站点-config-yml-文件"><a href="#配置站点-config-yml-文件" class="headerlink" title="配置站点 _config.yml 文件"></a>配置站点 _config.yml 文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git # 类型填git</span><br><span class="line">  repo: &lt;repository url&gt; # 你的Github仓库地址</span><br><span class="line">  branch: master # 分支名称。默认填写 master 如果您使用的是 GitHub ，程序会尝试自动检测。</span><br><span class="line">  message: # 提交信息可以自定义，不填的则默认为提交时间</span><br></pre></td></tr></table></figure>
 
-<h3 id="发布到-GitHub"><a href="#发布到-GitHub" class="headerlink" title="发布到 GitHub"></a>发布到 GitHub</h3><p>在本地的 Hexo 站点根目录下，执行如下命令即可部署到 GitHub Pages 上。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo d -g</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>提醒</p>
-<p>如果是第一次使用，会弹出一个登录框，需要登录你的 GitHub 账号。</p>
-</blockquote>
-<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><p>如果你拥有个人域名，请用 A 记录解析到以下 IP 中的任意一个。如果使用 CNAME 请解析到你的 GitHub 仓库名称。</p>
-<ul>
-<li>185.199.108.153</li>
-<li>185.199.109.153</li>
-<li>185.199.110.153</li>
-<li>185.199.111.153</li>
-</ul>
-<p><strong>参考表格</strong></p>
-<table>
-<thead>
-<tr>
-<th>记录类型</th>
-<th>主机记录</th>
-<th>解析路线</th>
-<th>记录值</th>
-<th>MAX 优先级</th>
-<th>TTL（秒）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>A</td>
-<td>@</td>
-<td>默认</td>
-<td>185.199.110.153</td>
-<td>-</td>
-<td>600</td>
-</tr>
-<tr>
-<td>CNAME</td>
-<td>@</td>
-<td>默认</td>
-<td>GitHub博客仓库名称</td>
-<td>-</td>
-<td>600</td>
-</tr>
-</tbody></table>
-<p>打开仓库设置，找到 GitHub Pages 项目，修改 Custom domain 选项的值为你的自定义域名（不带 http 等前缀）</p>
-<p>勾选 Custom domain 选项下的 Enforce HTTPS 选项，强制开启 Https 。如果遇到 Enforce HTTPS 选项无法打开，可以稍等一会儿再尝试。</p>
-<blockquote>
-<p>提醒</p>
-<p>同时需要在本地的 source 目录新建一个 CNAME 文件，内容为你的自定义域名（不带 http 等前缀）。否则无法使用自定义域名功能（ hexo d 生成的文件没有 CNAME 文件，导致仓库的自定域名设置失效）</p>
-</blockquote>
 
-    
 
-    
 
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/29/%E9%83%A8%E7%BD%B2hexo%E5%88%B0github%E4%BB%A5%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1159,8 +496,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
